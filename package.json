@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/CuaxiloaHM/ecommerce-arte/issues"
   },
-  "homepage": "https://github.com/CuaxiloaHM/ecommerce-arte#readme"
+  "homepage": "https://github.com/CuaxiloaHM/ecommerce-arte#readme",
+  "dependencies": {
+    "sweetalert2": "^11.7.1"
+  }
 }
