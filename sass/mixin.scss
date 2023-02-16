@@ -1,0 +1,10 @@
+@mixin btnBase($colorFondo, $width, $colorFuente){
+    background-color: $colorFondo;
+    padding: 10px;
+    margin: 5px;
+    height: 45px;
+    width: $width;
+    border-radius: 10px;
+    border-color: white;
+    color: $colorFuente;
+}

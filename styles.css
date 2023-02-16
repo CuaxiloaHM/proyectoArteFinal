@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
+header ul li {
+  align-items: center;
+  text-align: center;
+  width: 150;
+}
+header ul li a {
+  text-align: center;
+  padding: 14px 16px;
+}
+header ul li a:hover {
+  background-color: #87a0c4;
+}
+header .carrito {
+  background-color: #ff793f;
+  color: white;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+}
+
+body .btnEnviar {
+  background-color: #0f4189;
+  padding: 10px;
+  margin: 5px;
+  height: 45px;
+  width: 150px;
+  border-radius: 10px;
+  border-color: white;
+  color: #FCFDFE;
+}
+body .btnCuadrado {
+  background-color: #FCFDFE;
+  padding: 10px;
+  margin: 5px;
+  height: 45px;
+  width: 45px;
+  border-radius: 10px;
+  border-color: white;
+  color: #343839;
+}
+body .btnCancelar {
+  background-color: #838383;
+  padding: 10px;
+  margin: 5px;
+  height: 45px;
+  width: 80px;
+  border-radius: 10px;
+  border-color: white;
+  color: #343839;
+}
+body .contenedor, body .contenedorTitulo {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  flex-grow: 5;
+  width: 300px;
+}
+body .contenedorTitulo {
+  align-items: baseline;
+}
+
+main h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 50px;
+}
+main #contenedorProductos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/*# sourceMappingURL=styles.css.map */

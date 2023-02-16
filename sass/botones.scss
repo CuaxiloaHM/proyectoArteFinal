@@ -1,0 +1,53 @@
+header {
+    ul {
+        li {
+            align-items: center;
+            text-align: center;
+            width: 150;
+        }
+
+        li a {
+            text-align: center;
+            padding: 14px 16px;
+        }
+
+        li a:hover {
+            background-color: $colorPrimario;
+        }
+    }
+
+    .carrito{
+        background-color: $colorTerciario;
+        color: white;
+        border-radius: 50%;
+        height: 25px;
+        width: 25px;
+    }
+}
+
+body {
+    .btnEnviar {
+        @include btnBase ($colorSecundario, 150px, $colorBlanco);
+    }
+
+    .btnCuadrado {
+        @include btnBase ($colorBlanco, 45px, $colorNegro);
+    }
+
+    .btnCancelar {
+        @include btnBase ($colorGris, 80px, $colorNegro);
+    }
+
+    .contenedor {
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr;
+        flex-grow: 5;
+        width: 300px;
+    }
+
+    .contenedorTitulo {
+        @extend.contenedor;
+        align-items: baseline;
+    }
+}

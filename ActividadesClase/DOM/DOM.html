@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    
+    <h1 id="valorContenido"></h1>
+    
+    <input type="text" placeholder="Ingresa tu nombre" id="nombretxt"><br>
+
+    <button id="boton-guardar" onclick="guardar_item();">Guardar</button><br>
+
+    <label type="text" id="nombre"></label><br>
+
+    <button id="boton-reiniciar" onclick="reiniciar_item();">Reiniciar Usuario</button>
+
+    <button id="refresh" onclick="recargar_pagina();">Recargar Página</button>
+
+    <script>
+        const guardar_item = ()=> {
+            var nom = document.getElementById("nombretxt").value;
+            localStorage.setItem("Nombre", nom);
+            document.getElementById("nombretxt").value = "";
+        }
+
+        const reiniciar_item = ()=> {
+            localStorage.clear();
+            recargar_pagina();
+        }
+
+        const recargar_pagina = ()=> {
+            location.reload();
+        }
+
+        var usuario = localStorage.getItem("Nombre");
+
+        if(usuario==null || usuario == ''){
+            let texto = document.getElementById('valorContenido');
+            texto.innerHTML = 'Hola, me podrias dar tu nombre? </li>';
+        }else{
+            let texto = document.getElementById('valorContenido');
+            texto.innerHTML = 'Bienvenido de Vuelta, ' + usuario +'</li>';
+        }
+
+        //const mostrar_item = ()=> {
+        //  <button id="boton-cargar" onclick="mostrar_item();">Cargar elementos</button><br>    
+        //    var nombre = localStorage.getItem("Nombre");
+        //    document.getElementById("nombre").innerHTML = nombre;
+        //}
+    </script>
+
+    <h1>Hola MUNDO</h1>
+
+    <section id="seccion1"></section>
+
+    <script>
+        let nuevo_elemento = document.createElement('div');
+        nuevo_elemento.innerHTML = '<h1>Hola MÉXICO</h1>';
+        let elemento_padre = document.getElementById('seccion1');
+        elemento_padre.appendChild(nuevo_elemento);
+    </script>
+
+    <li>Ilustración - Sketch</li>
+    <li>Ilustración - Color Base</li>
+    <li>Ilustración - Completa</li>
+    <li>Otros Servicios</li>
+
+    <script>
+        let lista = document.getElementsByTagName('li');
+    </script>
+
+    <br>
+    <br>
+
+    <button type="button" onclick="ocultar()">Ocultar</button>
+    <button type="button" onclick="mostrar()">Mostrar</button>
+
+    <div id='foo' class="container"> 
+
+    </div>
+
+    <script>
+
+        function ocultar(){
+            document.getElementById('foo').style.display = 'none';
+        }
+        function mostrar(){
+            document.getElementById('foo').style.display = 'block';
+        }
+
+        let zapatos = [
+            {marca: 'Nike', stock: 8, precios: 150.30 },
+            {marca: 'Puma', stock: 7, precios: 80.5 },
+            {marca: 'Adidas', stock: 6, precios: 70.41 },
+            {marca: 'Converse', stock: 8, precios: 120.9 },
+        ]
+
+        var foo = zapatos.map(function(objeto){
+            return'<div > MARCA: '+ objeto.marca + ' Stock: ' + objeto.stock + ' Precios: ' + objeto.precios + ' </div>'
+        })
+        document.getElementById("foo").innerHTML = foo;
+
+    </script>
+
+</body>
+</html>
+

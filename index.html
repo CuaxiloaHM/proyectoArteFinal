@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CuaxiloaSP</title>
+    <link rel="stylesheet" href="./Media/Imagenes/LogoS.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <div>
+                    <a href="./index.html">
+                        <img src="./Media/Imagenes/LogoS.png" alt="LogoCuaxiloaSP" height="50" width="50">
+                    </a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link" href="./acercade.html">Acerca de mi</a></li>
+                        <li><a class="nav-link" href="./novedades.html">Novedades</a></li>
+                        <li><a class="nav-link" href="./contacto.html">Contacto</a></li>
+                        <li>
+                            <button id="numeroCarrito" class="btnCuadrado" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <iconify-icon icon="material-symbols:shopping-cart-outline-rounded"></iconify-icon>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <section >
+            <div class="contenedor">
+                <div>
+                    <div>
+                        <h3>Artista Digital</h3>
+                    </div>
+                    <div>
+                        <h1>CuaxiloaSP</h1>
+                    </div>
+                </div>
+                <div class="contenedorTitulo">
+                    <img src="./Media/Imagenes/LogoS.png" alt="Logo" width="150px" height="150px">
+                </div>
+            </div>
+        </section>
+
+        <section id="contenedorProductos"></section>
+
+        <section>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Ingresa tu email</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                        placeholder="nombre@email.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Asunto</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea2" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+                </div>
+
+                <button type="button" class="btnEnviar" id="bttnFormulario" onclick="validarFormulario();">Enviar</button>
+            </form>
+
+            <script>
+
+                function validarFormulario() {
+
+                    var email = document.getElementById("exampleInputEmail1").value;
+                    localStorage.setItem("Email", email);
+                    var asunto = document.getElementById("exampleFormControlTextarea1").value;
+                    localStorage.setItem("Asunto", asunto);
+                    var texto = document.getElementById("exampleFormControlTextarea2").value;
+                    localStorage.setItem("Texto", texto);
+
+                    var valEmail = localStorage.getItem("Email");
+                    var valAsunto = localStorage.getItem("Asunto");
+                    var valTexto = localStorage.getItem("Texto");
+
+                    if (valEmail == null || valEmail == '' || valAsunto == null || valAsunto == '' || valTexto == null || valTexto == '') {
+                        alert("Por favor, llena todos los datos");
+                        localStorage.clear();
+                    } else {
+                        alert("Se envio el mensaje con exito, te responderemos a la brevedad.");
+                        document.getElementById("exampleInputEmail1").value = "";
+                        document.getElementById("exampleFormControlTextarea1").value = "";
+                        document.getElementById("exampleFormControlTextarea2").value = "";
+                        localStorage.clear();
+                    }
+
+                }
+            </script>
+
+        </section>
+
+        <aside>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
+                aria-labelledby="offcanvasRightLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasRightLabel">Tu carrito de compras</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div id="carritoActual"></div>
+                </div>
+            </div>
+        </aside>
+
+        <form action=""></form>
+
+    </main>
+
+    <footer>
+
+    </footer>
+
+    <script src="https://code.iconify.design/iconify-icon/1.0.5/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>

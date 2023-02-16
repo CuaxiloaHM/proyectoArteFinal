@@ -1,0 +1,13 @@
+main{
+
+    h1{
+        font-family: $fontTitulos;
+        font-size: 50px;
+    }
+
+    #contenedorProductos{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 20px;
+    }
+}
